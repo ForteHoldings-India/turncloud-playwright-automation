@@ -1,0 +1,34 @@
+import { test, expect } from '@playwright/test';
+
+test('test', async ({ page }) => {
+  await page.goto('https://my.turncloud.com/index.html');
+  await page.getByRole('textbox', { name: 'Username' }).click();
+  await page.getByRole('textbox', { name: 'Username' }).fill('agangane@forteholdings.com');
+  await page.getByRole('textbox', { name: 'Password' }).click();
+  await page.getByRole('textbox', { name: 'Password' }).fill('Bcd@1234');
+  await page.getByRole('textbox', { name: 'Account' }).click();
+  await page.getByRole('textbox', { name: 'Account' }).fill('33850');
+  await page.getByRole('button', { name: 'Login' }).click();
+  await page.goto('https://my.turncloud.com/1033/main.html');
+  await page.getByRole('gridcell', { name: 'latest change' }).click();
+  await page.getByText('Demographics').click();
+  await page.getByRole('textbox', { name: 'First *' }).click();
+  await page.getByRole('textbox', { name: 'First *' }).click();
+  await page.getByRole('textbox', { name: 'First *' }).click();
+  await page.getByRole('textbox', { name: 'First *' }).fill('one');
+  await page.getByRole('textbox', { name: 'Last *' }).dblclick();
+  await page.getByRole('textbox', { name: 'Last *' }).fill('change');
+  await page.getByRole('textbox', { name: 'Preferred Name' }).click();
+  await page.getByRole('textbox', { name: 'Preferred Name' }).fill('one patient');
+  await page.getByRole('button', { name: 'Save' }).click();
+  await page.getByText('Patient Lookup').click();
+  await page.getByRole('gridcell', { name: 'second' }).dblclick();
+  await page.getByRole('button', { name: '- second update    ' }).click();
+  await page.locator('[id="22776"]').getByText('Demographics').click();
+  await page.getByRole('textbox', { name: 'First Name' }).click();
+  await page.getByRole('textbox', { name: 'First Name' }).dblclick();
+  await page.getByRole('textbox', { name: 'First Name' }).fill('town');
+  await page.getByRole('textbox', { name: 'Last Name' }).dblclick();
+  await page.getByRole('textbox', { name: 'Last Name' }).fill('patient');
+  await page.getByRole('button', { name: 'Save' }).click();
+});

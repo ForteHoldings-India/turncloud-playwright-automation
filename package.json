@@ -1,0 +1,35 @@
+{
+  "name": "playwright-automation",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "playwright test",
+    "test:functional": "playwright test tests/functional",
+    "test:functional:headed": "playwright test tests/functional --headed",
+    "test:regression": "playwright test -c playwright.regression.config.js",
+    "test:regression:headed": "playwright test -c playwright.regression.config.js --headed",
+    "test:regression:patients": "playwright test -c playwright.regression.config.js tests/regression/patients",
+    "test:regression:patients:positive": "playwright test -c playwright.regression.config.js tests/regression/patients/patientAccountHeaderPositive.spec.js",
+    "test:regression:patients:negative": "playwright test -c playwright.regression.config.js tests/regression/patients/patientAccountHeaderNegative.spec.js",
+    "test:regression:employer": "playwright test -c playwright.regression.config.js tests/regression/employer",
+    "test:regression:employer:positive": "playwright test -c playwright.regression.config.js tests/regression/employer/employerPositive.spec.js",
+    "test:regression:employer:negative": "playwright test -c playwright.regression.config.js tests/regression/employer/employerNegative.spec.js",
+    "test:regression:insurance": "playwright test -c playwright.regression.config.js tests/regression/insurance",
+    "test:regression:insurance:positive": "playwright test -c playwright.regression.config.js tests/regression/insurance/insurancePositive.spec.js",
+    "test:regression:insurance:negative": "playwright test -c playwright.regression.config.js tests/regression/insurance/insuranceNegative.spec.js",
+    "test:regression:auth": "playwright test -c playwright.regression.config.js tests/regression/auth",
+    "test:regression:auth:positive": "playwright test -c playwright.regression.config.js tests/regression/auth/loginPositive.spec.js",
+    "test:regression:auth:negative": "playwright test -c playwright.regression.config.js tests/regression/auth/loginNegative.spec.js",
+    "report:open": "playwright show-report",
+    "test:regression:report": "cmd /c \"playwright test -c playwright.regression.config.js & playwright show-report\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "@playwright/test": "^1.58.2",
+    "@types/node": "^25.3.5"
+  }
+}
